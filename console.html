@@ -1,0 +1,51 @@
+ <!DOCTYPE html>
+<html>
+<body>
+
+  <h1>Console test</h1>
+
+  <input type="button" id="inputBtnDate" value="Дата" />
+  <input type="button" id="inputBtnPrintPath" value="Путь" />
+
+  <p id="paragStatus">Status is started</p>
+
+
+
+  <script type="text/javascript">
+
+  inputBtnDate.addEventListener("click", onDateClick);
+  inputBtnPrintPath.addEventListener("click", onPrintPathClick);
+
+  console.log('my first console log in', getCurrDate());
+  console.log('Current URL:', getCurrPath());
+  console.log(location);
+
+
+  function onDateClick() {
+    const date = getCurrDate();
+    console.log('Test console in', date);
+    printStatus(date);
+  }
+
+  function onPrintPathClick() {
+    let path=getCurrPath();
+    console.log(path);
+    printStatus(path);
+  }
+
+  function getCurrDate() {
+    return new Date();
+  }
+
+  function getCurrPath() {
+    return window.location.href;
+  }
+
+  function printStatus(value) {
+      paragStatus.textContent = value;
+  }
+
+  </script>
+
+</body>
+</html>

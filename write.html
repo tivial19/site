@@ -1,0 +1,25 @@
+ <!DOCTYPE html>
+<html>
+<body>
+
+<h1>Document write test</h1>
+
+<div id="printBlock"></div>
+
+ <script>
+ 	
+ 	const printBlock = document.getElementById("printBlock");
+     for (let i=1; i<34; i++){
+      print(i);
+      } 
+      
+function print(value){
+    const pElement = document.createElement("p");
+    pElement.textContent = value;
+    printBlock.appendChild(pElement);
+}
+
+</script>
+
+</body>
+</html> 
