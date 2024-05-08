@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Отправка мыла</title>
+</head>
+
+
+<body>
+
+  <h1>Давайте отправим email</h1>
+  <a href="mailto:youremail@example.com?subject=тема письма&body=это само письмо/nновая строчка"> Send Email </a>
+  <br/><br/>
+  <input type="button" id="inputBtnEmail" value="Send by script" />
+
+
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+ 
+  <script>
+    console.log('script in html is working');
+    console.log('Email==null', Email==null);
+
+    inputBtnEmail.addEventListener("click", onEmailClick);
+
+
+
+    function onEmailClick() {
+      //console.log('Email==null', Email==null);
+      console.log('onEmailClick');
+      sendEmail('email@example.com', 'тема письма', 'письмо сделаное скриптом');
+    }
+  
+    function sendEmail(email, sub, body) {
+      window.open('mailto:'+email+'?subject='+sub+'&body=' +body);
+    }
+
+
+  </script>
+
+
+</body>
+</html>

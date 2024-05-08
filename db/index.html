@@ -1,0 +1,73 @@
+ <!DOCTYPE html>
+<html>
+<body>
+
+  <h1>indexedDB test</h1>
+
+  <div id="printBlock"></div>
+
+  <input type="text" id="inputTextStorage" placeholder="Введите имя хранилища"/>
+  <input type="button" id="inputBtnStorage" value="Создать"/>
+
+
+
+  <script>
+
+  let db;
+ 	const dbName = 'test';
+  //const storageName = 'storageTest';
+  loadDb(dbName);
+  inputBtnStorage.addEventListener("click", addToDb);
+
+
+
+  function addToDb() {
+
+  }
+  // function onCreateStorage() {
+  //   //let storageName=inputTextStorage.value;
+  //   //createStorage(storageName);
+  //   //print('Создано хранилище '+ storageName);
+  // }
+
+  function createStorage(name) {
+    console.log('createStorage ' + name);
+    if (!db.objectStoreNames.contains(name)) {
+      db.createObjectStore(name);
+      console.log('here ');
+    }
+  }
+
+
+  function loadDb(name) {
+    const openDbRequest = indexedDB.open(name);
+    openDbRequest.onsuccess = onSuccess;
+    //openDbRequest.onupgradeneeded = onUpgradeneeded;
+    //
+    //
+    // function onUpgradeneeded() {
+    //   db=openDbRequest.result;
+    //   console.log('onUpgradeneeded ' + db);
+    //   createStorage(storageName);
+    // }
+
+    function onSuccess() {
+      if(db==null){
+        db=openDbRequest.result;
+      }
+      print('база данных ' + dbName + ' подключена');
+    }
+
+  }
+
+  function print(value){
+    const pElement = document.createElement("p");
+    pElement.textContent = value;
+    printBlock.appendChild(pElement);
+  }
+
+  </script>
+
+
+</body>
+</html>
