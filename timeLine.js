@@ -16,4 +16,11 @@ const timeLine=[
 
 ];
 
-export default timeLine
+function load(){
+	return timeLine;
+	}
+
+export default {
+	load
+	
+	}

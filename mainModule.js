@@ -1,6 +1,15 @@
-import timeLine from 'https://tivial19.github.io/site/timeLine.js';
+const autor='TiViAl';
+const moduleName='Main Module';
+console.log(autor, moduleName, 'Import');
 
-console.log('TiViAl', 'Main Module load');
+import Log from './log.js';
+import TimeLine from './timeLine.js';
 
-//let timeL= new TimeLine();
-console.log('TiViAl', 'Main Module', timeLine);
+
+console.log(autor, moduleName, 'Load');
+
+const timeLine= TimeLine.load();
+console.log(autor, moduleName, timeLine);
+
+
+console.log(autor, moduleName, 'Loaded');

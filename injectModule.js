@@ -1,4 +1,4 @@
-const moduleUrl='https://tivial19.github.io/site/mainModule.js';
+const moduleUrl='./mainModule.js';
 const s = document.createElement('script');
 s.setAttribute('src', moduleUrl);
 s.setAttribute('type', 'module');
